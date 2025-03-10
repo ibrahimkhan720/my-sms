@@ -21,7 +21,7 @@
                 $getLatestSMS = mysqli_query($connection, "SELECT * FROM message WHERE status='ACTIVE' ORDER BY id DESC LIMIT 10 ") or die(mysqli_error($connection));
                 while ($viewLatestSMS = mysqli_fetch_array($getLatestSMS)) {
                 ?>
-                    <li><a href="#"><?php echo $viewLatestSMS['title']; ?></a></li>
+                    <li><a href="sms.php?id=<?php echo $viewLatestSMS['id'] ?>"><?php echo $viewLatestSMS['title']; ?></a></li>
                 <?php } ?>
             </ul>
         </li>
